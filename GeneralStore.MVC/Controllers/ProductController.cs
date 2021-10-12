@@ -27,7 +27,8 @@ namespace GeneralStore.MVC.Controllers
             return View();
         }
         // POST: Product
-        [HttpPost]
+        [HttpPost, ActionName("Create")]
+        [ValidateAntiForgeryToken]
         public async Task<ActionResult> Create(Product product)
         {
             if (ModelState.IsValid)
@@ -53,6 +54,45 @@ namespace GeneralStore.MVC.Controllers
             if (product == null)
             {
                 return HttpNotFound();
+            }
+            return View(product);
+        }
+        // Post: Delete
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> Delete(int id)
+        {
+            Product product = await _db.Products.FindAsync(id);
+            _db.Products.Remove(product);
+            await _db.SaveChangesAsync();
+            return RedirectToAction("Index");
+        }
+
+        // GET: Edit
+        // Product/Edit/{id}
+        public async Task<ActionResult> Edit(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(System.Net.HttpStatusCode.BadRequest);
+            }
+            Product product = await _db.Products.FindAsync(id);
+            if (product == null)
+            {
+                return HttpNotFound();
+            }
+            return View(product);
+        }
+        // POST: Edit
+        [HttpPost, ActionName("Edit")]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> Edit(Product product)
+        {
+            if (ModelState.IsValid)
+            {
+                _db.Entry(product).State = EntityState.Modified;
+                await _db.SaveChangesAsync();
+                return RedirectToAction("Index");
             }
             return View(product);
         }
