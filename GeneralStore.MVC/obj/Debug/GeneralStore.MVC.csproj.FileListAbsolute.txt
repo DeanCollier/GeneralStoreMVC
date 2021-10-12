@@ -106,3 +106,6 @@ D:\1150\Week17\General_Store_MVC\GeneralStore.MVC\GeneralStore.MVC\obj\Debug\Gen
 D:\1150\Week17\General_Store_MVC\GeneralStore.MVC\GeneralStore.MVC\obj\Debug\GeneralStore.MVC.csproj.CopyComplete
 D:\1150\Week17\General_Store_MVC\GeneralStore.MVC\GeneralStore.MVC\obj\Debug\GeneralStore.MVC.dll
 D:\1150\Week17\General_Store_MVC\GeneralStore.MVC\GeneralStore.MVC\obj\Debug\GeneralStore.MVC.pdb
+D:\1150\Week17\General_Store_MVC\GeneralStore.MVC\GeneralStore.MVC\obj\Debug\GeneralStore.MVC.Migrations.test.resources
+D:\1150\Week17\General_Store_MVC\GeneralStore.MVC\GeneralStore.MVC\obj\Debug\GeneralStore.MVC.csproj.GenerateResource.cache
+D:\1150\Week17\General_Store_MVC\GeneralStore.MVC\GeneralStore.MVC\obj\Debug\GeneralStore.MVC.Migrations.poop.resources

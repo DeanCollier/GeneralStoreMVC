@@ -23,13 +23,13 @@ namespace GeneralStore.MVC.Controllers
             return View(orderedArray);
         }
 
-        // GET: Product 
+        // GET: Create Product 
         // Product/Create
         public ActionResult Create()
         {
             return View();
         }
-        // POST: Product
+        // POST: Create Product
         [HttpPost, ActionName("Create")]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Create(Product product)
@@ -40,9 +40,7 @@ namespace GeneralStore.MVC.Controllers
                 await _db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
-
             return View(product);
-
         }
 
         // GET: Details
